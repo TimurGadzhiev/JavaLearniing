@@ -5,24 +5,25 @@ public class TwoElementsSum {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String[] sequence = input.split(" ");
-        if (sequence.length < 3) {
+        int length = sequence.length;
+        if (length < 3) {
             System.out.println(0);
             return;
         }
 
-        int[] sequenceOfNumbers = new int[sequence.length];
-        for (int i = 0; i < sequence.length; i++) {
+        int[] sequenceOfNumbers = new int[length];
+        for (int i = 0; i < length; i++) {
             sequenceOfNumbers[i] = Integer.parseInt(sequence[i]);
         }
 
         int smallestSum = sequenceOfNumbers[0] + sequenceOfNumbers[2];
 
-        for (int i = 0; i < sequenceOfNumbers.length - 2; i++) {
+        for (int i = 1; i < length - 2; i++) {
             int currentSum = sequenceOfNumbers[i] + sequenceOfNumbers[i + 2];
-            if (currentSum < sum) {
-                sum = currentSum;
+            if (currentSum < smallestSum) {
+                smallestSum = currentSum;
             }
         }
-        System.out.println(sum);
+        System.out.println(smallestSum);
     }
 }
