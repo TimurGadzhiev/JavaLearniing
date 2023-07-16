@@ -15,7 +15,7 @@ public class TwoElementsSum {
             sequenceOfNumbers[i] = Integer.parseInt(sequence[i]);
         }
 
-        int sum = sequenceOfNumbers[0] + sequenceOfNumbers[2];
+        int smallestSum = sequenceOfNumbers[0] + sequenceOfNumbers[2];
 
         for (int i = 0; i < sequenceOfNumbers.length - 2; i++) {
             int currentSum = sequenceOfNumbers[i] + sequenceOfNumbers[i + 2];
