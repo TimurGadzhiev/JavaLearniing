@@ -4,19 +4,13 @@ public class ArraysLesson {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-        String[] line = str.split(" ");
-        int lowestLength = 0;
-        int index = 0;
-        for (int i = 0; i < (line.length - 1); i++) {
-            if (line[i].length() < line[i + 1].length()) {
-                lowestLength = line[i].length();
+        String[] words = str.split(" ");
+        int shortestWordIndex = 0;
+        for (int i = 1; i < words.length; i++) {
+            if (words[shortestWordIndex].length() > words[i].length()) {
+                shortestWordIndex = i;
             }
         }
-        for (int i = 0; i <= (line.length - 1); i++) {
-            if (lowestLength == line[i].length()) {
-                index = i;
-            }
-        }
-        System.out.println(index + 1);
+        System.out.println(shortestWordIndex + 1);
     }
 }
