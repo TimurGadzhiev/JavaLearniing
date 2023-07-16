@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ArraysLesson {
+public class ShortestWord {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
