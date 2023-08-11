@@ -3,16 +3,13 @@ import java.util.Scanner;
 public class NumberFromSequence {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int index = scanner.nextInt();
-        String str = "";
-        while(scanner.hasNextLine()) {
-            str = scanner.nextLine();
-        }
-        String[] arr = str.split(" ");
-        if (index > arr.length) {
+        String indexInput = scanner.nextLine();
+        int realIndex = Integer.parseInt(indexInput);
+        String[] sequence = scanner.nextLine().split(" ");
+        if (realIndex > sequence.length || realIndex < 0) {
             System.out.println("Неверный ввод");
             return;
         }
-        System.out.println(arr[index]);
+        System.out.println(sequence[realIndex]);
     }
 }
